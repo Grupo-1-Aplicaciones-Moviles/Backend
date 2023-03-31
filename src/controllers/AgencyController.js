@@ -1,0 +1,46 @@
+import AgencyRepository from "../repositories/AgencyRepository.js";
+import ServiceRepository from "../repositories/ServiceRepository.js";
+import ReviewRepository from "../repositories/ReviewRepository.js";
+
+class AgencyController{
+    constructor() {
+        this.agencyRepository = new AgencyRepository();
+        this.serviceRepository = new ServiceRepository();
+        this.reviewRepository = new ReviewRepository();
+    }
+    async getAllAgencies(req, res){
+        try{
+            const agencies = await this.agencyRepository.getAll();
+            return res.status(200).json(agencies);
+        }
+        catch(error){
+            return res.status(400).json({
+                message: "There is an error getting the agencies"
+            })
+        }
+    }
+    async getServicesByAgencyId(req, res){
+        try{
+            const services = await this.serviceRepository.getByAgencyId(req.params.id);
+            return res.status(200).json(services);
+        }
+        catch(error){
+            return res.status(400).json({
+                message: error
+            })
+        }
+    }
+    async getReviewsByAgencyId(req, res){
+        try{
+            const reviews = await this.reviewRepository.getByAgencyId(req.params.id);
+            return res.status(200).json(reviews);
+        }
+        catch(error){
+            return res.status(400).json(error);
+        }
+    }
+
+
+};
+
+export default AgencyController;
