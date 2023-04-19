@@ -6,7 +6,10 @@
   "main": "index.js",
   "scripts": {
     "start": "start ./src/index.js",
-    "dev": "nodemon ./src/index.js"
+    "dev": "nodemon ./src/index.js",
+    "install-prod": "npm install --only=prod",
+    "install-dev": "npm install",
+    "install-prod-omit-dev": "npm install --only=prod --omit=dev"
   },
   "author": "Paolo Cisneros",
   "license": "ISC",
