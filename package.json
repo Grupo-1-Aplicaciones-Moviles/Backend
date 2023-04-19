@@ -5,7 +5,7 @@
   "description": "API",
   "main": "index.js",
   "scripts": {
-    "start": "start ./src/index.js",
+    "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js"
   },
   "author": "Paolo Cisneros",
