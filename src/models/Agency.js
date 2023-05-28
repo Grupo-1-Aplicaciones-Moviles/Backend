@@ -38,6 +38,10 @@ const agencySchema = new mongoose.Schema({
     type_user: {
         type: String,
         default: "agency"
+    },
+    score: {
+        typee: Number,
+        default: 0
     }
 });
 

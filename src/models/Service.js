@@ -33,6 +33,10 @@ const serviceSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "agencies",
         required: [true, "The service id is obligatory"]
+    },
+    score: {
+        typee: Number,
+        default: 0
     }
 });
 

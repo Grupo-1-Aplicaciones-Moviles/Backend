@@ -7,6 +7,7 @@ const connectDatabase = async () => {
     }
     catch(error){
         console.log("There is an error in the database")
+        console.log(error)
     }
 }
 
