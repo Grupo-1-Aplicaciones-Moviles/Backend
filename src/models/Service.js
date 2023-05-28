@@ -35,7 +35,7 @@ const serviceSchema = new mongoose.Schema({
         required: [true, "The service id is obligatory"]
     },
     score: {
-        typee: Number,
+        type: Number,
         default: 0
     }
 });
