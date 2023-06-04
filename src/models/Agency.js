@@ -40,7 +40,7 @@ const agencySchema = new mongoose.Schema({
         default: "agency"
     },
     score: {
-        typee: Number,
+        type: Number,
         default: 0
     }
 });
