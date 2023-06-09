@@ -8,6 +8,10 @@ router.get("/", async (req, res) => {
     await agencyController.getAllAgencies(req, res);
 });
 
+router.get("/:id", async (req, res) => {
+    await agencyController.getAgencyById(req, res);
+})
+
 router.get("/:id/services", async (req, res) => {
     await agencyController.getServicesByAgencyId(req, res);
 });

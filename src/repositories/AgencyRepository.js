@@ -12,6 +12,9 @@ class AgencyRepository{
     async getAll(){
         return await Agency.find();
     }
+    async getById(data){
+        return await Agency.findById(data);
+    }
 
 }
 

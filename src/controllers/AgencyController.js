@@ -19,6 +19,17 @@ class AgencyController{
             })
         }
     }
+    async getAgencyById(req, res) {
+        try{
+            const agency = await this.agencyRepository.getById(req.params.id);
+            return res.status(200).json(agency);
+        }
+        catch(error){
+            return res.status(400).json({
+                message: "There is an error getting the agency"
+            })
+        }
+    }
     async getServicesByAgencyId(req, res){
         try{
             const services = await this.serviceRepository.getByAgencyId(req.params.id);
