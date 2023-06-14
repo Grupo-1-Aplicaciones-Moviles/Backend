@@ -45,4 +45,9 @@ const agencySchema = new mongoose.Schema({
     }
 });
 
+agencySchema.methods.toJSON = function(){
+    const {__v, password, ...user} = this.toObject();
+    return user;
+}
+
 export default mongoose.model("agencies", agencySchema);

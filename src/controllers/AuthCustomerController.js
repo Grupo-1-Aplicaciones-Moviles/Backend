@@ -44,7 +44,9 @@ class AuthCustomerController{
 
             return res.status(200).json({
                 message: "Welcome!",
-                token: jwt
+                token: jwt,
+                id: user._id,
+                user
             })
         }
         catch(error){
