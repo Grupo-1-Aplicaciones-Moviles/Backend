@@ -28,5 +28,9 @@ router.get("/:id/activities", async (req, res) => {
     await serviceController.getActivitiesByServiceId(req, res)
 })
 
+router.get("/name/:name", async (req, res) => {
+    await serviceController.getServicesByName(req, res);
+})
+
 
 export default router;

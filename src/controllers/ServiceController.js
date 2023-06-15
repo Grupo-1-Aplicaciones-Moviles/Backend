@@ -79,6 +79,18 @@ class ServiceController{
             })
         }
     }
+    async getServicesByName(req, res){
+        try{
+            const services = await this.serviceRepository.getByName(req.params.name);
+            return res.status(200).json(services);
+        }
+        catch(error){
+            return res.status(400).json({
+                message: "There is an error getting the servcices by name",
+                error
+            })
+        }
+    }
 }
 
 export default ServiceController;

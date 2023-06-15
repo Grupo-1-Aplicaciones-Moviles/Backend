@@ -22,6 +22,9 @@ class ServiceRepository{
     async getByAgencyId(id){
         return await Service.find({agency_id: id});
     }
+    async getByName(nameSearch){
+        return await Service.find({name: nameSearch});
+    }
 }
 
 export default ServiceRepository;
