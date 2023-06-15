@@ -1,12 +1,14 @@
 import AgencyRepository from "../repositories/AgencyRepository.js";
 import ServiceRepository from "../repositories/ServiceRepository.js";
 import ReviewRepository from "../repositories/ReviewRepository.js";
+import HiredServiceRepository from "../repositories/HiredServiceRepository.js";
 
 class AgencyController{
     constructor() {
         this.agencyRepository = new AgencyRepository();
         this.serviceRepository = new ServiceRepository();
         this.reviewRepository = new ReviewRepository();
+        this.hiredServiceRepository = new HiredServiceRepository();
     }
     async getAllAgencies(req, res){
         try{
@@ -50,7 +52,16 @@ class AgencyController{
             return res.status(400).json(error);
         }
     }
+    async getHiredServicesByAgencyId(req, res) {
+        try{
+            const hiredServices = await this.hiredServiceRepository.getByAgencyId(req.params.id);
+            return res.status(200).json(hiredServices);
+        }
+        catch(error){
+            return res.status(400).json(error);
 
+        }
+    }
 
 };
 

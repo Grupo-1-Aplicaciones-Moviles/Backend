@@ -20,4 +20,9 @@ router.get("/:id/reviews", async(req, res) => {
     await agencyController.getReviewsByAgencyId(req, res);
 });
 
+router.get("/:id/hiredservices", async (req, res) => {
+    await agencyController.getHiredServicesByAgencyId(req, res);
+})
+
+
 export default router;

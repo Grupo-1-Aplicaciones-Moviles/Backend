@@ -11,6 +11,11 @@ const hiredServiceSchema = new mongoose.Schema({
         ref: "services",
         required: [true, "The service id is obligatory"]
     },
+    agency_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "agencies",
+        required: [true, "The agency id is obligatory"]
+    },
     status: {
         type: String,
         required: [true, "The status is obligatory"]
