@@ -23,7 +23,7 @@ class ServiceRepository{
         return await Service.find({agency_id: id});
     }
     async getByName(nameSearch){
-        return await Service.find({name: {$regex:nameSearch}});
+        return await Service.find({name: {$regex:nameSearch, $options: 'i'}});
     }
 }
 
