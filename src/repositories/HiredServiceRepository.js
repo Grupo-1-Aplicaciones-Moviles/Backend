@@ -11,7 +11,7 @@ class HiredServiceRepository{
         return await HiredService.find({customer_id: id}).populate('service_id')
     }
     async getByAgencyId(id){
-        return await HiredService.find({agency_id: id}).populate('service_id')
+        return await HiredService.find({agency_id: id}).populate('service_id').populate('customer_id')
     }
     async create(data){
         await HiredService.create(data);
