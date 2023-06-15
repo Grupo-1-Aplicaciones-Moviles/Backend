@@ -11,7 +11,7 @@ class ServiceRepository{
         await Service.create(data);
     }
     async getById(id){
-        return Service.findById(id);
+        return Service.findById(id).populate("agency_id");
     }
     async deleteById(id){
         await Service.findByIdAndDelete(id);
