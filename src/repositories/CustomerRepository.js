@@ -13,6 +13,9 @@ class CustomerRepository{
     async getAll(data){
         return await Customer.find();
     }
+    async getById(id){
+        return await Customer.findById(id);
+    }
 };
 
 export default CustomerRepository;

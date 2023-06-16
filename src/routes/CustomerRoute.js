@@ -8,6 +8,10 @@ router.get("/", async (req, res) => {
     await customerController.getAllCustomers(req, res);
 });
 
+router.get("/:id", async (req, res) => {
+    await customerController.getCustomerById(req, res);
+})
+
 router.get("/:id/hiredservices", async (req, res) => {
     await customerController.getHiredServicesByCustomerId(req, res);
 })

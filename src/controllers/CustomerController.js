@@ -27,6 +27,18 @@ class CustomerController{
 
         }
     }
+    async getCustomerById(req, res){
+        try{
+            const customer = await this.customerRepository.getById(req.params.id);
+            return res.status(200).json(customer);
+        }
+        catch(error){
+            return res.status(400).json({
+                message: "There's an error getting the customer by id",
+                error
+            })
+        }
+    }
 
 
 };
